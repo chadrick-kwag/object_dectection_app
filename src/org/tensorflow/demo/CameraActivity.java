@@ -40,6 +40,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.Size;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 import java.nio.ByteBuffer;
@@ -90,7 +91,14 @@ public abstract class CameraActivity extends AppCompatActivity
     }
 
     Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+
     setSupportActionBar(myToolbar);
+    myToolbar.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Toast.makeText(getApplicationContext(),"using tiny-yolo-test1.pb",Toast.LENGTH_LONG).show();
+      }
+    });
 
 
   }
